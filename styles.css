@@ -1,0 +1,64 @@
+﻿/* styles.css */
+:root {
+    /* [cite: 34-40] 定義全站共用參數 */
+    --yite-blue: #162B4E; /* 品牌主色 */
+    --yite-gold: #F2AC3E; /* 品牌強調色 */
+    --text-white: #ffffff;
+    --text-light: #ecf0f1;
+    --text-dark: #333333;
+    --main-font: "Microsoft JhengHei", sans-serif;
+    --navbar-height: 70px;
+}
+
+body {
+    font-family: var(--main-font);
+    color: var(--text-dark);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding-top: var(--navbar-height); /* 避免內容被 Sticky Header 遮住 */
+}
+
+main {
+    flex: 1; /* 讓內容區撐開，確保 Footer 永遠在底部 */
+}
+
+/* --- Component: Header 樣式 --- */
+/* [cite: 51] Sticky 效果與樣式變化會在 header.js 中透過 class 切換 */
+.navbar-custom {
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    height: var(--navbar-height);
+}
+
+    .navbar-custom.scrolled {
+        background-color: var(--yite-blue); /* 滾動後背景變深 */
+        height: 60px; /* 高度縮小 [cite: 51] */
+    }
+
+        .navbar-custom.scrolled .nav-link,
+        .navbar-custom.scrolled .navbar-brand {
+            color: var(--text-white) !important;
+        }
+
+.nav-link {
+    color: var(--yite-blue);
+    font-weight: 600;
+    margin: 0 10px;
+}
+
+    .nav-link:hover {
+        color: var(--yite-gold);
+    }
+
+/* --- RWD 修正 [cite: 43] --- */
+@media (max-width: 768px) {
+    /* 手機版樣式微調 */
+    .navbar-collapse {
+        background: #fff;
+        padding: 1rem;
+        border-radius: 0 0 10px 10px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+}

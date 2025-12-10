@@ -1,0 +1,26 @@
+[
+  {
+    "id": "t01",
+    "name": "陳名師",
+    "subject": "高中數學",
+    "education": "國立台灣大學 數學系碩士",
+    "description": "擁有20年教學經驗，擅長將抽象的數學觀念具象化，讓學生不再害怕數學。",
+    "image": "images/6.jpg"
+  },
+  {
+    "id": "t02",
+    "name": "Sarah 老師",
+    "subject": "英文科",
+    "education": "美國哥倫比亞大學 英語教學碩士",
+    "description": "教學風格活潑生動，重視互動式教學，讓學生自然開口說英語。",
+    "image": "images/5.jpg"
+  },
+  {
+    "id": "t03",
+    "name": "李博士",
+    "subject": "自然理化",
+    "education": "國立清華大學 物理博士",
+    "description": "強調觀念理解與邏輯推演，帶領學生探索科學的奧秘。",
+    "image": "images/3.jpg"
+  }
+]

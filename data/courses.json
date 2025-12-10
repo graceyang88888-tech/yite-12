@@ -1,0 +1,50 @@
+[
+  {
+    "id": "c01",
+    "name": "國小資優數學培訓班",
+    "category": "國小部",
+    "teacher": "王大明 老師",
+    "summary": "啟發數學邏輯思考，奠定國中銜接基礎。",
+    "image": "images/4.jpg"
+  },
+  {
+    "id": "c02",
+    "name": "升私中全科衝刺班",
+    "category": "國小部",
+    "teacher": "教學團隊",
+    "summary": "針對考私中入學考題型進行密集訓練。",
+    "image": "images/6.jpg"
+  },
+  {
+    "id": "c03",
+    "name": "國中英語精修班",
+    "category": "國中部",
+    "teacher": "Sarah 老師",
+    "summary": "強調閱讀與聽力，不僅是考試，更要能溝通。",
+    "image": "images/3.jpg"
+  },
+  {
+    "id": "c04",
+    "name": "國中自然科學實驗班",
+    "category": "國中部",
+    "teacher": "李博士",
+    "summary": "透過實驗操作理解理化觀念，不再死背公式。",
+    "image": "images/1.jpg"
+  },
+  {
+    "id": "c05",
+    "name": "高中學測數學總複習",
+    "category": "高中部",
+    "teacher": "陳名師",
+    "summary": "拆解歷屆試題，掌握命題趨勢，高效取分。",
+    "image": "images/6.jpg"
+  },
+  {
+    "id": "c06",
+    "name": "高中英文閱讀寫作班",
+    "category": "高中部",
+    "teacher": "Jessica 老師",
+    "summary": "針對長篇閱讀與學術寫作進行深度指導。",
+    "image": "images/5.jpg"
+  }
+]
