@@ -1,64 +1,98 @@
 ﻿/* styles.css */
 :root {
-    /* [cite: 34-40] 定義全站共用參數 */
-    --yite-blue: #162B4E; /* 品牌主色 */
-    --yite-gold: #F2AC3E; /* 品牌強調色 */
+    --yite-blue: #162B4E;
+    --yite-gold: #F2AC3E;
     --text-white: #ffffff;
-    --text-light: #ecf0f1;
     --text-dark: #333333;
-    --main-font: "Microsoft JhengHei", sans-serif;
-    --navbar-height: 70px;
+    --navbar-height: 70px; /* 電腦版導航高度 */
+    --navbar-height-mobile: 60px; /* 手機版導航高度 */
 }
 
 body {
-    font-family: var(--main-font);
+    font-family: "Microsoft JhengHei", sans-serif;
     color: var(--text-dark);
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    padding-top: var(--navbar-height); /* 避免內容被 Sticky Header 遮住 */
+    padding-top: var(--navbar-height);
+    background-color: #f9f9f9;
 }
 
-main {
-    flex: 1; /* 讓內容區撐開，確保 Footer 永遠在底部 */
-}
-
-/* --- Component: Header 樣式 --- */
-/* [cite: 51] Sticky 效果與樣式變化會在 header.js 中透過 class 切換 */
+/* --- Navigation Bar --- */
 .navbar-custom {
     background-color: #fff;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
     transition: all 0.3s ease;
     height: var(--navbar-height);
 }
 
     .navbar-custom.scrolled {
-        background-color: var(--yite-blue); /* 滾動後背景變深 */
-        height: 60px; /* 高度縮小 [cite: 51] */
+        background-color: var(--yite-blue);
+        height: 60px;
+        box-shadow: 0 2px 15px rgba(0,0,0,0.2);
     }
 
+        /* 滾動後的文字顏色變化 */
         .navbar-custom.scrolled .nav-link,
-        .navbar-custom.scrolled .navbar-brand {
+        .navbar-custom.scrolled .navbar-brand,
+        .navbar-custom.scrolled .fa-bars,
+        .navbar-custom.scrolled .fa-search {
             color: var(--text-white) !important;
         }
 
 .nav-link {
     color: var(--yite-blue);
     font-weight: 600;
-    margin: 0 10px;
+    margin: 0 8px;
+    transition: color 0.2s;
 }
 
-    .nav-link:hover {
+    .nav-link:hover, .nav-link.active {
         color: var(--yite-gold);
     }
 
-/* --- RWD 修正 [cite: 43] --- */
-@media (max-width: 768px) {
-    /* 手機版樣式微調 */
-    .navbar-collapse {
-        background: #fff;
-        padding: 1rem;
-        border-radius: 0 0 10px 10px;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+/* --- 手機版 Offcanvas (側滑選單) 客製化 --- */
+.offcanvas {
+    max-width: 75%; /* 手機版選單寬度 */
+}
+
+.offcanvas-header {
+    background-color: var(--yite-blue);
+    color: #fff;
+}
+
+.offcanvas-title {
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* 確保關閉按鈕是白色的 */
+.btn-close-white {
+    filter: invert(1) grayscale(100%) brightness(200%);
+}
+
+/* --- RWD 斷點設定 (對應 Bootstrap 斷點) --- */
+/* 手機版 (< 992px) */
+@media (max-width: 991.98px) {
+    body {
+        padding-top: var(--navbar-height-mobile); /* 調整手機版頂部間距 */
+    }
+
+    .navbar-custom {
+        height: var(--navbar-height-mobile);
+        padding: 0.5rem 1rem;
+    }
+
+    /* 在手機版隱藏不必要的元素 (如果有) */
+    .desktop-only {
+        display: none !important;
+    }
+}
+
+/* 電腦版 (>= 992px) */
+@media (min-width: 992px) {
+    /* 強制側邊欄固定佈局的細節修正，主要邏輯已在 sidebar.js */
+    main {
+        padding-bottom: 2rem;
     }
 }
